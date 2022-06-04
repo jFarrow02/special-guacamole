@@ -22,8 +22,15 @@ pipeline {
         stage('build image') {
             steps {
                 script {
-                    echo 'build image...'
                     gv.buildImage()
+                }
+            }
+        }
+
+        stage('push image') {
+            steps {
+                script {
+                    gv.pushImage()
                 }
             }
         }
